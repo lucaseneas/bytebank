@@ -9,13 +9,12 @@ import { Validators } from '@angular/forms';
 export class AppComponent {
   title = 'bytebank';
 
-  destino: number | undefined;
-  valor: number | undefined;
-  transferencia: any;
+  transferencias: any[] = [];
 
   transferir($event: any){
     console.log($event);
-    this.transferencia = $event;
+    const transferencia = {...$event, data: new Date()};
+    this.transferencias.push(transferencia);
   }
 }
 
